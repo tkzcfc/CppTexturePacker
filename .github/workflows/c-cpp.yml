@@ -26,11 +26,11 @@ jobs:
           cd build
           # Assuming the binary is in build/ folder, adjust this path accordingly
           zip -r binary.zip *
-        # Upload the binary.zip as an artifact
-        - uses: actions/upload-artifact@v2
-          with:
-            name: binary
-            path: build/binary.zip
+      # Upload the binary.zip as an artifact
+      - uses: actions/upload-artifact@v2
+        with:
+          name: binary
+          path: build/binary.zip
 
   release:
     needs: build-windows
