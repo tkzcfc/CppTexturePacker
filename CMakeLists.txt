@@ -68,13 +68,3 @@ set_target_properties(
     PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/${PROJECT_NAME}
     )
-
-add_subdirectory(pybind)
-
-get_filename_component(DATA_PATH
-                       data/
-                       ABSOLUTE)
-add_compile_definitions(TEST_DATA_PATH="${DATA_PATH}")
-# Unit tests
-enable_testing()
-add_subdirectory(tests)
