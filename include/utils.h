@@ -109,7 +109,7 @@ namespace CppTexturePacker
 	{
 		std::vector<std::string> file_paths;
 
-		for (auto &fe : fs::directory_iterator(dir_path))
+		for (auto &fe : fs::recursive_directory_iterator(dir_path))
 		{
 			auto file_path = fe.path().string();
 			auto suffix = file_path.substr(file_path.size() - 4);
