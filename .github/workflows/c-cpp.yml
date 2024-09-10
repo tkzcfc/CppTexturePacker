@@ -13,15 +13,16 @@ jobs:
       - name: Set up vcpkg
         uses: lukka/run-vcpkg@v11
         with:
+          # vcpkgJsonGlob: 'vcpkg.json'
           # 这里填写需要安装的包
-          packages: boost-test boost-format boost-filesystem cimg libpng libplist libjpeg-turbo pybind11 utfcpp
+          runVcpkgInstall: boost-test boost-format boost-filesystem cimg libpng libplist libjpeg-turbo pybind11 utfcpp
           # vcpkgVersion: '2023.08.15' # 你可以指定一个特定版本，也可以省略此行使用最新版本
           
       - name: Build project
         run: |
           mkdir build
           cd build
-          cmake -DCMAKE_TOOLCHAIN_FILE="../vcpkg/scripts/buildsystems/vcpkg.cmake" ..
+          cmake -DCMAKE_TOOLCHAIN_FILE="$env:GITHUB_WORKSPACE/vcpkg/scripts/buildsystems/vcpkg.cmake" ..
           cmake --build ./ 
 
       - name: Setup archive
