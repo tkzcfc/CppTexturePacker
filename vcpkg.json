@@ -1,0 +1,15 @@
+{
+  "name": "main",
+  "version-string": "latest",
+  "dependencies": [
+    "boost-test",
+    "boost-format",
+    "boost-filesystem",
+    "cimg",
+    "libpng",
+    "libplist",
+    "libjpeg-turbo",
+    "pybind11",
+    "utfcpp"
+  ]
+}
