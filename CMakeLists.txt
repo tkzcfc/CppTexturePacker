@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 project(cpptexturepacker)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 find_package(Boost REQUIRED COMPONENTS filesystem)
 find_package(CImg CONFIG REQUIRED)
