@@ -15,15 +15,12 @@ jobs:
           git clone https://github.com/Microsoft/vcpkg.git
           cd vcpkg
           ./bootstrap-vcpkg.bat
-          ./vcpkg install boost-test
           ./vcpkg install boost-format
           ./vcpkg install boost-filesystem
           ./vcpkg install cimg
           ./vcpkg install libpng 
           ./vcpkg install libplist
           ./vcpkg install libjpeg-turbo
-          ./vcpkg install pybind11
-          ./vcpkg install utfcpp
           cd ../
           
       - name: Build project
