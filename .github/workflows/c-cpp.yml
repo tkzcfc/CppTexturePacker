@@ -34,7 +34,7 @@ jobs:
         shell: bash
         run: |
           cd ../
-          7z a "windows-latest.zip" "build"
+          7z a -tzip windows-latest.zip build
 
       - name: Upload binaries to release
         uses: softprops/action-gh-release@v2
