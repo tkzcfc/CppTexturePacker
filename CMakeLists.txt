@@ -51,7 +51,6 @@ add_executable(${PROJECT_NAME} ${PROJECT_HEADERS} ${PROJECT_SOURCES})
 
 target_link_libraries(${PROJECT_NAME} ${JPEG_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} PNG::PNG) 
-target_link_libraries(${PROJECT_NAME} ${plist_names})
 target_link_libraries(${PROJECT_NAME} Boost::filesystem)
 target_link_libraries(${PROJECT_NAME} unofficial::libplist::libplist unofficial::libplist::libplist++)
 
