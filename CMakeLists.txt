@@ -8,7 +8,6 @@ find_package(CImg CONFIG REQUIRED)
 find_package(JPEG REQUIRED)
 find_package(libpng CONFIG REQUIRED)
 
-find_path(UTFCPP_INCLUDE_DIR utf8/core.h)
 find_path(PLIST_INCLUDE_DIR plist/plist.h)
 
 set(plist_names ${PLIST_NAMES} plist plist-static libplist libplist-static)
@@ -26,12 +25,12 @@ else()
 endif()
 
 include_directories(include/
+                    include/utf8
                    ${Boost_INCLUDE_DIRS}
                    ${CIMG_INCLUDE_DIR}
                    ${JPEG_INCLUDE_DIR}
                    ${PNG_INCLUDE_DIR}
                    ${PUGIXML_INCLUDE_DIR}
-                   ${UTFCPP_INCLUDE_DIR}
                    ${PLIST_INCLUDE_DIR}
                    )
 
