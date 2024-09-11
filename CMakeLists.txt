@@ -8,6 +8,7 @@ find_package(CImg CONFIG REQUIRED)
 find_package(JPEG REQUIRED)
 find_package(libpng CONFIG REQUIRED)
 find_package(PNG REQUIRED)
+find_package(unofficial-libplist CONFIG REQUIRED)
 
 find_path(PLIST_INCLUDE_DIR plist/plist.h)
 
@@ -52,6 +53,7 @@ target_link_libraries(${PROJECT_NAME} ${JPEG_LIBRARIES})
 target_link_libraries(${PROJECT_NAME} PNG::PNG) 
 target_link_libraries(${PROJECT_NAME} ${plist_names})
 target_link_libraries(${PROJECT_NAME} Boost::filesystem)
+target_link_libraries(${PROJECT_NAME} unofficial::libplist::libplist unofficial::libplist::libplist++)
 
 if(NOT WIN32)
   target_link_libraries(${PROJECT_NAME} pthread)
