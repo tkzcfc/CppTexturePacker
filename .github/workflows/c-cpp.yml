@@ -37,8 +37,8 @@ jobs:
         run: |
           7z a -tzip windows-latest.zip build/
 
-    - name: Upload binaries to release
-      uses: softprops/action-gh-release@v2
-      if: startsWith(github.ref, 'refs/tags/')
-      with:
-        files: windows-latest.zip
+      - name: Upload binaries to release
+        uses: softprops/action-gh-release@v2
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: windows-latest.zip
