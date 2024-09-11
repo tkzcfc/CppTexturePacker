@@ -44,11 +44,11 @@ jobs:
       - name: Setup archive
         shell: bash
         run: |
-          cd cd build/cpptexturepacker
-          7z a texturepacker.zip Release
+          cd build/cpptexturepacker/Release
+          7z a texturepacker.zip *.exe *.dll
 
       - name: Upload binaries to release
         uses: softprops/action-gh-release@v2
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          files: build/cpptexturepacker/texturepacker.zip
+          files: build/cpptexturepacker/Release/texturepacker.zip
