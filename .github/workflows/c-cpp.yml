@@ -9,7 +9,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      # 正确使用 GitHub 提供的 vcpkg action
       - name: Set up vcpkg
         run: |
           git clone https://github.com/Microsoft/vcpkg.git
@@ -28,13 +27,12 @@ jobs:
           mkdir build
           cd build
           cmake -DCMAKE_TOOLCHAIN_FILE="../vcpkg/scripts/buildsystems/vcpkg.cmake" ..
-          cmake --build ./ 
+          cmake --build . 
 
       - name: Setup archive
         shell: bash
         run: |
-          cd ../
-          7z a -tzip windows-latest.zip build
+          7z a -tzip windows-latest.zip build/
 
       - name: Upload binaries to release
         uses: softprops/action-gh-release@v2
