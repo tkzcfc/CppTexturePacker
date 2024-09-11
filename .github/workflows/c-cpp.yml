@@ -40,3 +40,5 @@ jobs:
           files: "windows-latest.zip"
           draft: true  # 创建一个草稿版本的 Release
           release_name: "Latest Windows Build"
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
