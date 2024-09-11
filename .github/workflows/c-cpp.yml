@@ -25,13 +25,17 @@ jobs:
           ./vcpkg install libjpeg-turbo
           cd ../
           
-      - name: Build project
+      - name: Configure project (Release mode)
         run: |
           mkdir build
           cd build
           cmake -DCMAKE_TOOLCHAIN_FILE="../vcpkg/scripts/buildsystems/vcpkg.cmake" -DCMAKE_BUILD_TYPE=Release ..
+
+      - name: Build project
+        run: |
+          cd build
           cmake --build .
-      
+
       - name: Print current directory (cmd)
         run: |
           echo Current Path: %cd%
@@ -40,7 +44,7 @@ jobs:
       - name: Setup archive
         shell: bash
         run: |
-          7z a texturepacker.zip  build
+          7z a texturepacker.zip build
 
       - name: Upload binaries to release
         uses: softprops/action-gh-release@v2
